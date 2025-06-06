@@ -1,0 +1,26 @@
+.profile {
+}
+
+.profile__item {
+  height: 120px;
+  width: 120px;
+}
+
+.profile__image {
+  height: 120px;
+  width: 120px;
+}
+
+.profile__info {
+  height: 120px;
+  width: 120px;
+}
+
+.profile__info-name {
+}
+
+.profile__info-description {
+}
+
+.profile__add-button {
+}
