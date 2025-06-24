@@ -1,3 +1,19 @@
 .header {
-  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  height: 119px;
+  background-color: black;
+  margin: 0 auto;
+}
+
+.header__container {
+  width: 880px;
+  height: 74px;
+  margin-top: 45px;
+}
+
+.header__title {
+  width: 173px;
+  height: 33px;
+  margin: 0 auto;
 }
