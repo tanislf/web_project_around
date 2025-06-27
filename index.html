@@ -37,7 +37,7 @@
             <p class="profile__info-name" id="name">Tania López</p>
             <input
               class="profile__info-edit-button"
-              onclick="ShowHide()"
+              id="editButton"
               type="image"
               src="./images/Edit Button.png"
               alt="edit-button"
@@ -181,21 +181,15 @@
             </fieldset>
             <input
               class="popup__form-close-button"
-              onclick="closeForm()"
               id="close"
               type="image"
               src="./images/Close-Icon.png"
               alt="close-item"
             />
+            <button class="popup__form-button" id="save" type="submit">
+              Guardar
+            </button>
           </form>
-          <button
-            class="popup__form-button"
-            id="save"
-            type="submit"
-            onclick="saveData()"
-          >
-            Guardar
-          </button>
         </div>
       </section>
       <footer class="footer">
