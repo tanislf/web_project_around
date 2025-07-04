@@ -20,7 +20,7 @@ function saveData(evt) {
   evt.preventDefault();
   nameUser.textContent = nameInformation.value;
   jobInfo.textContent = jobInformation.value;
-  close();
+  document.getElementById("form").style.display = "none";
 }
 
 //función para cerrar el formulario
