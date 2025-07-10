@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.5);
-  height: 100%;
+  height: 100vh;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   display: none;
 }
@@ -97,6 +97,109 @@
 }
 
 .popup__form-button:hover {
+  opacity: 80%;
+  background: #000000;
+}
+
+.popup-card {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: none;
+}
+
+.popup-card__container {
+  position: relative;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 430px;
+  height: 330px;
+  border-radius: 10px;
+}
+
+.popup-card__container-title {
+  position: absolute;
+  top: 35px;
+  font-family: Inter-Black;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 100%;
+  margin: 0;
+  width: 358px;
+}
+
+.popup-card__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 358px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.popup-card__form-fildset {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 358px;
+  gap: 27px;
+  font-family: Inter-Regular;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  border-style: none;
+}
+
+.popup-card__form-fildset_name {
+  height: 27px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.popup-card__form-fildset_info {
+  height: 27px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c4c4c4;
+}
+
+.popup-card__form-close-button {
+  position: absolute;
+  bottom: 330px;
+  left: 430px;
+}
+
+.popup-card__form-close-button:hover {
+  cursor: pointer;
+  opacity: 60%;
+}
+
+.popup-card__form-button {
+  color: #c4c4c4;
+  position: absolute;
+  bottom: 35px;
+  width: 358px;
+  height: 50px;
+  font-family: Inter-Regular;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  text-align: center;
+  border-style: none;
+  border-radius: 2px;
+  background-color: black;
+  border: 1px solid #c4c4c4;
+  cursor: pointer;
+}
+
+.popup-card__form-button:hover {
   opacity: 80%;
   background: #000000;
 }

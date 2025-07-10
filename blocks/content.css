@@ -1,10 +1,13 @@
 .content {
+  margin: 0 auto;
   background-color: black;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .content__grid {
   width: 880px;
-  height: 743px;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(2, auto);
@@ -13,28 +16,56 @@
   margin: 0 auto;
 }
 
-.content__grid-1 {
+.content__grid-card {
   width: 282px;
 }
 
-.content__grid-2 {
-  width: 282px;
+.content__grid-card-container {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: none;
 }
 
-.content__grid-3 {
-  width: 282px;
+.content__grid-card-image-container {
+  display: flex;
+  position: relative;
+  align-self: center;
+  justify-content: center;
 }
 
-.content__grid-4 {
-  width: 282px;
+.content__grid-card-image {
+  max-height: 75vh;
+  max-width: 75vw;
 }
 
-.content__grid-5 {
-  width: 282px;
+.content__grid-card-image-title {
+  font-family: Inter-Regular;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  color: white;
+  margin: 0;
 }
 
-.content__grid-6 {
-  width: 282px;
+.content__grid-card-image-close-button {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: -45px;
+  top: -45px;
+}
+
+.content__grid-card-image-close-button:hover {
+  cursor: pointer;
+  opacity: 60%;
 }
 
 .content__grid-item {
@@ -53,10 +84,14 @@
   border-top-right-radius: 10px;
 }
 
+.content__grid-image:hover {
+  cursor: pointer;
+}
+
 .content__grid-description {
   background-color: white;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
   height: 79px;
   display: flex;
   justify-content: space-between;
@@ -77,17 +112,40 @@
   overflow: hidden;
 }
 
-.content__grid-description-vector {
+.content__grid-description-like {
   height: 19px;
   width: 21px;
+  background: transparent url("../images/like.svg") center no-repeat;
+  background-size: 19px 21px;
+  border: none;
+  padding: 0;
   margin: 0;
 }
 
-.content__grid-description-vector:hover {
+.content__grid-description-trash {
+  position: relative;
+  bottom: 270px;
+  left: 250px;
+  height: 19px;
+  width: 18px;
+  background: transparent url("../images/Trash.svg") no-repeat;
+  background-size: 18px 19px;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content__grid-description-trash:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+.content__grid-description-like:hover {
   opacity: 60%;
   cursor: pointer;
 }
 
-.content__grid-description-vector:active {
-  background-color: black;
+.content__grid-description-like_is-active {
+  background: transparent url("../images/likeblack.svg") center no-repeat;
+  padding: 0;
+  margin: 0;
 }

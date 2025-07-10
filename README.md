@@ -1,7 +1,7 @@
-# Tripleten web_project_around
+# Tripconsten web_project_around
 
 Github Repository:
 https://github.com/tanislf/web_project_around.git
 
-Githug Pages: 
+Githug Pages:
 https://tanislf.github.io/web_project_around/

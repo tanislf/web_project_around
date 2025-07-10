@@ -2,12 +2,13 @@
   background-color: black;
   color: #545454;
   margin: 0 auto;
-  padding-top: 60px;
+  width: 100%;
+  padding: 60px 0;
 }
 
 .footer__copyright {
   width: 880px;
-  font-family: Inter-Black;
+  font-family: Inter-Regular;
   font-weight: 400;
   font-size: 14px;
   line-height: 100%;

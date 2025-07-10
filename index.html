@@ -46,7 +46,7 @@
           </div>
           <input
             class="profile__add-button"
-            id="add"
+            id="addButton"
             type="image"
             src="images/Add Button.png"
             alt="button"
@@ -54,115 +54,26 @@
         </div>
       </section>
       <main class="content">
-        <section class="content__grid">
-          <div class="content__grid-1">
-            <figure class="content__grid-item">
-              <img
-                class="content__grid-image"
-                src="images/image1.jpg"
-                alt="Valle de Yosemite"
-              />
-            </figure>
-            <div class="content__grid-description">
-              <p class="content__grid-description-text">Valle de Yosemite</p>
-              <input
-                class="content__grid-description-vector"
-                id="like"
-                type="image"
-                src="images/Vector-corazón.png"
-                alt="Vector like"
-              />
-            </div>
-          </div>
-          <div class="content__grid-2">
-            <figure class="content__grid-item">
-              <img
-                class="content__grid-image"
-                src="images/image2.jpg"
-                alt="Lago Louise"
-              />
-            </figure>
-            <div class="content__grid-description">
-              <p class="content__grid-description-text">Lago Louise</p>
-              <img
-                class="content__grid-description-vector"
-                src="images/Vector-corazón.png"
-                alt="Vector like"
-              />
-            </div>
-          </div>
-          <div class="content__grid-3">
-            <figure class="content__grid-item">
-              <img
-                class="content__grid-image"
-                src="images/image3.jpg"
-                alt="Montañas Calvas"
-              />
-            </figure>
-            <div class="content__grid-description">
-              <p class="content__grid-description-text">Montañas Calvas</p>
-              <img
-                class="content__grid-description-vector"
-                src="images/Vector-corazón.png"
-                alt="Vector like"
-              />
-            </div>
-          </div>
-          <div class="content__grid-4">
-            <figure class="content__grid-item">
-              <img
-                class="content__grid-image"
-                src="images/image4.jpg"
-                alt="Latemar"
-              />
-            </figure>
-            <div class="content__grid-description">
-              <p class="content__grid-description-text">Latemar</p>
-              <img
-                class="content__grid-description-vector"
-                src="images/Vector-corazón.png"
-                alt="Vector like"
-              />
-            </div>
-          </div>
-          <div class="content__grid-5">
-            <figure class="content__grid-item">
-              <img
-                class="content__grid-image"
-                src="images/image5.jpg"
-                alt="Vanois National Park"
-              />
-            </figure>
-            <div class="content__grid-description">
-              <p class="content__grid-description-text">Vanois National Park</p>
-              <img
-                class="content__grid-description-vector"
-                src="images/Vector-corazón.png"
-                alt="Vector like"
-              />
-            </div>
-          </div>
-          <div class="content__grid-6">
-            <figure class="content__grid-item">
-              <img
-                class="content__grid-image"
-                src="images/image6.jpg"
-                alt="Lago di Braies"
-              />
-            </figure>
-            <div class="content__grid-description">
-              <p class="content__grid-description-text">Lago di Braies</p>
-              <img
-                class="content__grid-description-vector"
-                src="images/Vector-corazón.png"
-                alt="Vector like"
-              />
-            </div>
+        <section class="content__grid"></section>
+        <section class="content__grid-card-container">
+          <div class="content__grid-card-image-container">
+            <img
+              class="content__grid-card-image"
+              src="./images/image1.jpg"
+              alt="imagen"
+            />
+            <input
+              class="content__grid-card-image-close-button"
+              type="image"
+              src="./images/Close-Icon.png"
+              alt="close-item"
+            />
+            <p class="content__grid-card-image-title">Valle de Yosemite</p>
           </div>
         </section>
       </main>
       <section class="popup" id="form">
-        <div class="popup__container popup__container_opened">
+        <div class="popup__container">
           <h2 class="popup__container-title">Editar perfil</h2>
           <form class="popup__form">
             <fieldset class="popup__form-fildset">
@@ -192,10 +103,60 @@
           </form>
         </div>
       </section>
+      <section class="popup-card" id="formCard">
+        <div class="popup-card__container popup-card__container_opened">
+          <h2 class="popup-card__container-title">Nuevo lugar</h2>
+          <form class="popup-card__form">
+            <fieldset class="popup-card__form-fildset">
+              <input
+                class="popup-card__form-fildset popup-card__form-fildset_name"
+                id="editTitle"
+                type="text"
+                placeholder="Título"
+              />
+              <input
+                class="popup-card__form-fildset popup-card__form-fildset_info"
+                id="editImage"
+                type="text"
+                placeholder="Enlace a la imagen"
+              />
+            </fieldset>
+            <input
+              class="popup-card__form-close-button"
+              id="closeCard"
+              type="image"
+              src="./images/Close-Icon.png"
+              alt="close-item"
+            />
+            <button class="popup-card__form-button" id="saveCard" type="submit">
+              Crear
+            </button>
+          </form>
+        </div>
+      </section>
       <footer class="footer">
         <p class="footer__copyright">&#64;2025 Around The U.S</p>
       </footer>
     </div>
+    <template id="templateCard">
+      <div class="content__grid-card">
+        <figure class="content__grid-item">
+          <img
+            class="content__grid-image"
+            src="images/image1.jpg"
+            alt="Valle de Yosemite"
+          />
+          <button
+            class="content__grid-description-trash"
+            type="button"
+          ></button>
+        </figure>
+        <div class="content__grid-description">
+          <p class="content__grid-description-text">Valle de Yosemite</p>
+          <button class="content__grid-description-like" type="button"></button>
+        </div>
+      </div>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
