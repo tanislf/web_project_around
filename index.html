@@ -75,20 +75,34 @@
       <section class="popup" id="form">
         <div class="popup__container">
           <h2 class="popup__container-title">Editar perfil</h2>
-          <form class="popup__form">
+          <form class="popup__form" id="formOne">
             <fieldset class="popup__form-fildset">
-              <input
-                class="popup__form-fildset popup__form-fildset_name"
-                id="editName"
-                type="text"
-                placeholder="Nombre"
-              />
-              <input
-                class="popup__form-fildset popup__form-fildset_info"
-                id="editJob"
-                type="text"
-                placeholder="Acerca de mi"
-              />
+              <label for="editName">
+                <input
+                  class="popup__form-fildset popup__form-fildset_name popup__form-input"
+                  id="editName"
+                  name="editName"
+                  type="text"
+                  placeholder="Nombre"
+                  minlength="2"
+                  maxlength="40"
+                  required
+                />
+              </label>
+              <span id="editName-error" class="popup__form-error-name"></span>
+              <label for="editJob">
+                <input
+                  class="popup__form-fildset popup__form-fildset_info popup__form-input"
+                  id="editJob"
+                  name="editJob"
+                  type="text"
+                  placeholder="Acerca de mi"
+                  minlength="2"
+                  maxlength="200"
+                  required
+                />
+              </label>
+              <span id="editJob-error" class="popup__form-error-info"></span>
             </fieldset>
             <input
               class="popup__form-close-button"
@@ -106,20 +120,32 @@
       <section class="popup-card" id="formCard">
         <div class="popup-card__container popup-card__container_opened">
           <h2 class="popup-card__container-title">Nuevo lugar</h2>
-          <form class="popup-card__form">
+          <form class="popup-card__form" id="formTwo">
             <fieldset class="popup-card__form-fildset">
-              <input
-                class="popup-card__form-fildset popup-card__form-fildset_name"
-                id="editTitle"
-                type="text"
-                placeholder="Título"
-              />
-              <input
-                class="popup-card__form-fildset popup-card__form-fildset_info"
-                id="editImage"
-                type="text"
-                placeholder="Enlace a la imagen"
-              />
+              <label for="editTitle">
+                <input
+                  class="popup-card__form-fildset popup-card__form-fildset_name popup__form-input"
+                  id="editTitle"
+                  name="editTitle"
+                  type="text"
+                  placeholder="Título"
+                  minlength="2"
+                  maxlength="30"
+                  required
+                />
+              </label>
+              <span id="editTitle-error" class="popup__form-error-name"></span>
+              <label for="editImage">
+                <input
+                  class="popup-card__form-fildset popup-card__form-fildset_info popup__form-input"
+                  id="editImage"
+                  name="editImage"
+                  type="text"
+                  placeholder="Enlace a la imagen"
+                  required
+                />
+              </label>
+              <span id="editImage-error" class="popup__form-error-info"></span>
             </fieldset>
             <input
               class="popup-card__form-close-button"
@@ -128,7 +154,7 @@
               src="./images/Close-Icon.png"
               alt="close-item"
             />
-            <button class="popup-card__form-button" id="saveCard" type="submit">
+            <button class="popup__form-button" id="saveCard" type="submit">
               Crear
             </button>
           </form>
@@ -158,5 +184,6 @@
       </div>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>

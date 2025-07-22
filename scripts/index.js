@@ -1,6 +1,7 @@
 //variables a utilizar
 const form = document.getElementById("form");
 const formCard = document.getElementById("formCard");
+const allFormList = document.querySelectorAll("form");
 const nameUser = document.querySelector(".profile__info-name");
 const jobInfo = document.querySelector(".profile__info-description");
 const nameInformation = document.getElementById("editName");
@@ -15,6 +16,7 @@ const closeButton = document.getElementById("close");
 const closeButtonCard = document.getElementById("closeCard");
 const templateCard = document.getElementById("templateCard");
 const cardsList = document.querySelector(".content__grid");
+const inputFormList = form.querySelectorAll(".popup__form-input");
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -87,11 +89,13 @@ function createCard(name, link) {
     document.querySelector(".content__grid-card-container").style.display =
       "none"; //<== función para cerrar imágen grande
   });
-  cardsList.append(cloneCard);
+
+  cardsList.prepend(cloneCard);
 }
 
 //función para mostrar el formulario y la información escrita
 function openForm(evt) {
+  evt.preventDefault();
   document.getElementById("form").style.display = "flex";
   nameInformation.value = nameUser.textContent;
   jobInformation.value = jobInfo.textContent;
@@ -107,11 +111,13 @@ function saveData(evt) {
 
 //función para cerrar el formulario
 function closeForm(evt) {
+  evt.preventDefault();
   document.getElementById("form").style.display = "none";
 }
 
 //función para mostrar el formulario de tarjetas y la información escrita
 function openFormCard(evt) {
+  evt.preventDefault();
   document.getElementById("formCard").style.display = "flex";
 }
 
@@ -124,10 +130,29 @@ function saveDataCard(evt) {
 
 //función para cerrar el formulario de tarjetas
 function closeFormCard(evt) {
+  evt.preventDefault();
   document.getElementById("formCard").style.display = "none";
 }
 
+//función para cerrar formulario con letra de teclado
+function closeFormKey(evt) {
+  if (evt.key === "Escape") {
+    saveData(evt);
+  }
+}
+
+//función para cerrar formulario de cartas con letra de teclado
+function closeFormCardKey(evt) {
+  if (evt.key === "Escape") {
+    saveDataCard(evt);
+  }
+}
+
 //Eventos para llamar a las funciones
+nameInformation.addEventListener("keydown", closeFormKey);
+jobInformation.addEventListener("keydown", closeFormKey);
+placeTitleInformation.addEventListener("keydown", closeFormCardKey);
+linkInformation.addEventListener("keydown", closeFormCardKey);
 form.addEventListener("submit", saveData);
 formCard.addEventListener("submit", saveDataCard);
 addButton.addEventListener("click", openFormCard);
