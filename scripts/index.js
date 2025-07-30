@@ -17,6 +17,7 @@ const closeButtonCard = document.getElementById("closeCard");
 const templateCard = document.getElementById("templateCard");
 const cardsList = document.querySelector(".content__grid");
 const inputFormList = form.querySelectorAll(".popup__form-input");
+const cardImage = document.querySelector(".content__grid-card-container");
 const initialCards = [
   {
     name: "Valle de Yosemite",
@@ -134,28 +135,43 @@ function closeFormCard(evt) {
   document.getElementById("formCard").style.display = "none";
 }
 
-//función para cerrar formulario con letra de teclado
-function closeFormKey(evt) {
-  if (evt.key === "Escape") {
-    saveData(evt);
+//función para cerrar form con click
+function closeFormOutside(evt) {
+  if (evt.target.classList.contains("popup")) {
+    closeForm(evt);
   }
 }
 
-//función para cerrar formulario de cartas con letra de teclado
-function closeFormCardKey(evt) {
-  if (evt.key === "Escape") {
-    saveDataCard(evt);
+//función para cerrar form de tarjetas con click
+function closeFormCardOutside(evt) {
+  if (evt.target.classList.contains("popup-card")) {
+    closeFormCard(evt);
+  }
+}
+
+//función para cerrar imagen con click
+function closeImageOutside(evt) {
+  if (evt.target.classList.contains("content__grid-card-container")) {
+    document.querySelector(".content__grid-card-container").style.display =
+      "none";
   }
 }
 
 //Eventos para llamar a las funciones
-nameInformation.addEventListener("keydown", closeFormKey);
-jobInformation.addEventListener("keydown", closeFormKey);
-placeTitleInformation.addEventListener("keydown", closeFormCardKey);
-linkInformation.addEventListener("keydown", closeFormCardKey);
+cardImage.addEventListener("click", closeImageOutside);
+form.addEventListener("click", closeFormOutside);
+formCard.addEventListener("click", closeFormCardOutside);
 form.addEventListener("submit", saveData);
 formCard.addEventListener("submit", saveDataCard);
 addButton.addEventListener("click", openFormCard);
 editButton.addEventListener("click", openForm);
 closeButton.addEventListener("click", closeForm);
 closeButtonCard.addEventListener("click", closeFormCard);
+window.addEventListener("keydown", function (evt) {
+  if (evt.key === "Escape") {
+    closeForm(evt);
+    closeFormCard(evt);
+    document.querySelector(".content__grid-card-container").style.display =
+      "none";
+  }
+});
